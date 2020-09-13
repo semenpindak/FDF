@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
+/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 18:34:08 by calpha            #+#    #+#             */
-/*   Updated: 2019/10/25 20:52:15 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/11 23:36:14 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,10 @@ static int	cast_int(char *str, int i, int sign, int int_base)
 
 int			ft_atoi_base(char *str, char *base)
 {
-	int			int_nbr;
 	int			int_base;
 	size_t		k;
 	long long	sign;
 
-	int_nbr = 0;
 	int_base = 0;
 	k = 0;
 	sign = 1;

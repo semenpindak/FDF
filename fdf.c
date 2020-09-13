@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
+/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 16:06:43 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/11 21:13:00 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/12 00:28:51 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int main (int ac, char *av[])
 	// printf("%zu\n", ft_strlen("aaaaaaaaaa"));
 	// printf("%f\n", sin(45));
 	// printf("%f\n", ceil(4.00000000678));
-	int
+	free(map);
 	return (0);
 }
