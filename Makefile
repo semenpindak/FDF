@@ -1,7 +1,7 @@
 LIBFT		= libft/libft.a
 MINILIBX	= minilibx_macos/libmlx.a
 NAME		= fdf
-SRC			= fdf.c read_file.c line.c draw_map.c
+SRC			= fdf.c read_file.c line.c draw_map.c zoom.c
 OBJ			= $(SRC:c=o)
 CFLAGS		= -Wall -Wextra -Werror
 LDLIBS 		= -lmlx -framework OpenGL -framework AppKit
