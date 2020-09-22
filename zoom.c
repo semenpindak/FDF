@@ -6,13 +6,13 @@
 /*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 19:34:04 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 13:41:54 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/22 16:10:30 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void zoom(t_data *map)
+void	zoom(t_data *map)
 {
 	map->x1 *= map->zoom;
 	map->x2 *= map->zoom;

@@ -6,7 +6,7 @@
 /*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 13:43:29 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 13:41:49 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/22 16:06:16 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void	clear_array(int ac, char **ar)
 	free(ar);
 }
 
-int	count_int(char *line)
+static int	count_int(char *line)
 {
-	char **ar;
-	int i;
-	int j;
+	char	**ar;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -41,7 +41,7 @@ int	count_int(char *line)
 	return (i);
 }
 
-int validation_file(char *av[])
+int			validation_file(char *av[])
 {
 	int		fd;
 	char	*line;
@@ -49,7 +49,7 @@ int validation_file(char *av[])
 	int		check;
 	int		r;
 
-	if(!(fd = open(av[1], O_RDONLY)))
+	if (!(fd = open(av[1], O_RDONLY)))
 		return (0);
 	if (get_next_line(fd, &line) == -1)
 		return (0);

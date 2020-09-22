@@ -6,7 +6,7 @@
 /*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 16:06:43 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 14:03:05 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/22 18:37:57 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@
 ** key == 69 zoom+, key == 78 zoom-
 */
 
-int deal_key(int key, t_data *map)
+static int	deal_key(int key, t_data *map)
 {
 	if (key == 53)
+	{
 		mlx_destroy_window(map->mlx_ptr, map->win_ptr);
+		exit (0);
+	}
 	if (key == 123)
 		map->move_x -= 30;
 	if (key == 124)
@@ -34,12 +37,16 @@ int deal_key(int key, t_data *map)
 		map->zoom += 2;
 	if (key == 78)
 		map->zoom -= 2;
+	if (key == 0)
+		rotate_left(map);
+	if (key == 2)
+		rotate_right(map);
 	mlx_clear_window(map->mlx_ptr, map->win_ptr);
 	draw_map(map);
 	return (0);
 }
 
-static void initialization(t_data *map)
+static void	initialization(t_data *map)
 {
 	map->x1 = 0;
 	map->y1 = 0;
@@ -58,7 +65,7 @@ static void initialization(t_data *map)
 	map->win_ptr = NULL;
 }
 
-int main (int ac, char *av[])
+int			main(int ac, char *av[])
 {
 	t_data *map;
 
@@ -72,11 +79,7 @@ int main (int ac, char *av[])
 		if (!(map = (t_data *)malloc(sizeof(t_data))))
 			return (0);
 		initialization(map);
-		if (read_file(map, av) == 0)
-		{
-			free (map);
-			return (0);
-		}
+		read_file(map, av);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 16:05:55 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 13:56:23 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/22 18:37:21 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <math.h>
 # include "mlx.h"
-# include "../../Libft/includes/libft.h"
+# include "Libft/includes/libft.h"
 
 typedef struct	s_data
 {
@@ -50,11 +50,12 @@ typedef struct	s_bresenham
 }				t_bresenham;
 
 int				validation_file(char *av[]);
-int				read_file(t_data *map, char *av[]);
+void			read_file(t_data *map, char *av[]);
 void			line(t_data *map);
 void			draw_map(t_data *map);
 void			zoom(t_data *map);
 void			move(t_data *map);
 int				color(t_data *map);
-
+void			rotate_left(t_data *map);
+void			rotate_right(t_data *map);
 #endif
