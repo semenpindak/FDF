@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zoom.c                                             :+:      :+:    :+:   */
+/*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 19:34:04 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 13:41:54 by calpha           ###   ########.fr       */
+/*   Created: 2020/09/22 14:01:10 by calpha            #+#    #+#             */
+/*   Updated: 2020/09/22 14:02:46 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void zoom(t_data *map)
+void	move(t_data *map)
 {
-	map->x1 *= map->zoom;
-	map->x2 *= map->zoom;
-	map->y1 *= map->zoom;
-	map->y2 *= map->zoom;
+	map->x1 += map->move_x;
+	map->x2 += map->move_x;
+	map->y1 += map->move_y;
+	map->y2 += map->move_y;
 }

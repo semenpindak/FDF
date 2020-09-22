@@ -6,7 +6,7 @@
 /*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 16:05:55 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/17 19:53:56 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/22 13:56:23 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,43 @@
 # include <stdio.h>
 # include <math.h>
 # include "mlx.h"
-# include "Libft/includes/libft.h"
-
-#define ABS(a) ((a < 0) ? -a : a)
-#define MAX(a, b) ((a > b) ? a : b)
-#define MIN(a, b) ((a < b) ? a : b)
+# include "../../Libft/includes/libft.h"
 
 typedef struct	s_data
 {
-	int			x0;
-	int			y0;
-	int			x1;
-	int			y1;
+	float		x1;
+	float		y1;
+	float		x2;
+	float		y2;
+	int			z1;
+	int			z2;
 	int			length;
 	int			width;
 	int			**top;
 	int			zoom;
+	int			move_x;
+	int			move_y;
 	int			color;
-
 	void		*mlx_ptr;
 	void		*win_ptr;
 }				t_data;
 
-void			read_file(t_data *map, char *av[]);
-void			line(int x0, int y0, int x1, int y1, t_data *map);
+typedef struct	s_bresenham
+{
+	float		deltax;
+	float		deltay;
+	float		signx;
+	float		signy;
+	float		error;
+	float		error2;
+}				t_bresenham;
+
+int				validation_file(char *av[]);
+int				read_file(t_data *map, char *av[]);
+void			line(t_data *map);
 void			draw_map(t_data *map);
 void			zoom(t_data *map);
+void			move(t_data *map);
+int				color(t_data *map);
 
 #endif
