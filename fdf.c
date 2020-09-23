@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
+/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 16:06:43 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 18:37:57 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/23 23:25:36 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,45 @@
 ** key == 69 zoom+, key == 78 zoom-
 */
 
-static int	deal_key(int key, t_data *map)
+// static int	deal_key(int key, t_data *map)
+// {
+// 	if (key == 53)
+// 	{
+// 		mlx_destroy_window(map->mlx_ptr, map->win_ptr);
+// 		exit (0);
+// 	}
+// 	if (key == 123)
+// 		map->move_x -= 30;
+// 	if (key == 124)
+// 		map->move_x += 30;
+// 	if (key == 125)
+// 		map->move_y += 30;
+// 	if (key == 126)
+// 		map->move_y -= 30;
+// 	if (key == 69)
+// 		map->zoom += 2;
+// 	if (key == 78)
+// 		map->zoom -= 2;
+// 	if (key == 0)
+// 		rotate_left(map);
+// 	if (key == 2)
+// 		rotate_right(map);
+// 	mlx_clear_window(map->mlx_ptr, map->win_ptr);
+// 	draw_map(map);
+// 	return (0);
+// }
+
+static void	clear_array(int ac, int **ar)
 {
-	if (key == 53)
+	int i;
+
+	i = 0;
+	while (i < ac)
 	{
-		mlx_destroy_window(map->mlx_ptr, map->win_ptr);
-		exit (0);
+		free(ar[i]);
+		i++;
 	}
-	if (key == 123)
-		map->move_x -= 30;
-	if (key == 124)
-		map->move_x += 30;
-	if (key == 125)
-		map->move_y += 30;
-	if (key == 126)
-		map->move_y -= 30;
-	if (key == 69)
-		map->zoom += 2;
-	if (key == 78)
-		map->zoom -= 2;
-	if (key == 0)
-		rotate_left(map);
-	if (key == 2)
-		rotate_right(map);
-	mlx_clear_window(map->mlx_ptr, map->win_ptr);
-	draw_map(map);
-	return (0);
+	free(ar);
 }
 
 static void	initialization(t_data *map)
@@ -86,11 +99,11 @@ int			main(int ac, char *av[])
 		ft_putstr_fd("Usage: ./fdf [file name]\n", 2);
 		return (0);
 	}
-	map->mlx_ptr = mlx_init();
-	map->win_ptr = mlx_new_window(map->mlx_ptr, 1000, 1000, av[1]);
+	// map->mlx_ptr = mlx_init();
+	// map->win_ptr = mlx_new_window(map->mlx_ptr, 1000, 1000, av[1]);
 	draw_map(map);
-	mlx_key_hook(map->win_ptr, deal_key, map);
-	mlx_loop(map->mlx_ptr);
+	// mlx_key_hook(map->win_ptr, deal_key, map);
+	// mlx_loop(map->mlx_ptr);
 
 	// int x;
 	// int y;
@@ -108,7 +121,7 @@ int			main(int ac, char *av[])
 	// 	printf("\n");
 	// }
 
-	// clear_array(map);
+	clear_array(map->width, map->top);
 	free(map);
 	return (0);
 }

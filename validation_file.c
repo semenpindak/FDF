@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
+/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 13:43:29 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 16:06:16 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/23 22:44:28 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ static int	count_int(char *line)
 {
 	char	**ar;
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	if (!(ar = ft_strsplit(line, ' ')))
 		return (0);
 	while (ar[i] != NULL)
@@ -54,6 +52,7 @@ int			validation_file(char *av[])
 	if (get_next_line(fd, &line) == -1)
 		return (0);
 	check_one = count_int(line);
+	free(line);
 	while ((r = get_next_line(fd, &line)) > 0)
 	{
 		check = count_int(line);

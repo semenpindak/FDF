@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   line.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
+/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 17:05:38 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 16:04:39 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/23 23:24:45 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void			line(t_data *map)
 	map->color = color(map);
 	move(map);
 	initialization(alg, map);
-	mlx_pixel_put(map->mlx_ptr, map->win_ptr, map->x2, map->y2, map->color);
+	// mlx_pixel_put(map->mlx_ptr, map->win_ptr, map->x2, map->y2, map->color);
 	while ((int)(map->x1 - map->x2) || (int)(map->y1 - map->y2))
 	{
-		mlx_pixel_put(map->mlx_ptr, map->win_ptr, map->x1, map->y1, map->color);
+		// mlx_pixel_put(map->mlx_ptr, map->win_ptr, map->x1, map->y1, map->color);
 		alg->error2 = alg->error * 2;
 		if (alg->error2 > -(alg->deltay))
 		{

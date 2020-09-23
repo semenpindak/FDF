@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
+/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 16:05:55 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/22 18:37:21 by calpha           ###   ########.fr       */
+/*   Updated: 2020/09/23 22:20:10 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <math.h>
-# include "mlx.h"
+// # include "mlx.h"
 # include "Libft/includes/libft.h"
 
 typedef struct	s_data
