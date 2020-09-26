@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.c                                             :+:      :+:    :+:   */
+/*   free_array.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/22 14:01:10 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/25 18:18:00 by calpha           ###   ########.fr       */
+/*   Created: 2020/09/25 19:00:27 by calpha            #+#    #+#             */
+/*   Updated: 2020/09/25 19:01:39 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	move(t_data *map)
+void	free_array(int ac, void **ar)
 {
-	map->x1 += map->move_x;
-	map->x2 += map->move_x;
-	map->y1 += map->move_y;
-	map->y2 += map->move_y;
+	int i;
+
+	i = 0;
+	while (i < ac)
+	{
+		free(ar[i]);
+		i++;
+	}
+	free(ar);
 }

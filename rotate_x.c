@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.c                                             :+:      :+:    :+:   */
+/*   rotate_x.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/22 14:01:10 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/25 18:18:00 by calpha           ###   ########.fr       */
+/*   Created: 2020/09/26 22:44:27 by calpha            #+#    #+#             */
+/*   Updated: 2020/09/26 22:44:39 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	move(t_data *map)
+/*
+** Rotate coordinate by x axis
+*/
+
+void	rotate_x(float *y, float *z, float rotate_x)
 {
-	map->x1 += map->move_x;
-	map->x2 += map->move_x;
-	map->y1 += map->move_y;
-	map->y2 += map->move_y;
+	float previous_y;
+
+	previous_y = *y;
+	*y = previous_y * cos(rotate_x) + *z * sin(rotate_x);
+	*z = -previous_y * sin(rotate_x) + *z * cos(rotate_x);
 }

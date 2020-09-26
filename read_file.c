@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: calpha <calpha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 17:45:49 by calpha            #+#    #+#             */
-/*   Updated: 2020/09/23 23:04:44 by oem              ###   ########.fr       */
+/*   Updated: 2020/09/25 19:05:18 by calpha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,6 @@ static void	fill_coordinates_i(t_data *map, int i, char **rcp)
 	}
 }
 
-static void	clear_array(int ac, char **ar)
-{
-	int i;
-
-	i = 0;
-	while (i < ac)
-	{
-		free(ar[i]);
-		i++;
-	}
-	free(ar);
-}
-
 static void	create_coordinates(t_data *map, char *av[])
 {
 	int		fd;
@@ -52,7 +39,7 @@ static void	create_coordinates(t_data *map, char *av[])
 		rcp = ft_strsplit(line, ' ');
 		map->top[i] = (int *)malloc(map->length * sizeof(int));
 		fill_coordinates_i(map, i, rcp);
-		clear_array(map->length, rcp);
+		free_array(map->length, (void **)rcp);
 		free(line);
 		i++;
 	}
@@ -91,7 +78,7 @@ static void	count_length(t_data *map, char *av[])
 	while (rcp[i] != NULL)
 		i++;
 	map->length = i;
-	clear_array(i, rcp);
+	free_array(i, (void **)rcp);
 	close(fd);
 }
 
