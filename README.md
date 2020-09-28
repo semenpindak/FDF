@@ -23,7 +23,11 @@ Run `make`, an executable called `fdf` should compile directly. Please submit an
 
 ## Usage <a name="Usage"></a>
 
+`./fdf [file]`
+
 ### Example:
+
+`~ ./fdf samples/42.fdf`
 
 ## License <a name="license"></a>
 
