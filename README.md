@@ -29,6 +29,14 @@ Run `make`, an executable called `fdf` should compile directly. Please submit an
 
 `~ ./fdf samples/42.fdf`
 
+![Sample](screenshots/title.jpg "Map with object")
+
+Z axis of rotation:	`A`, `D`
+X axis of rotation:	`S`, `W`
+Y axis of rotation:	`Q`, `E`
+move:				`left`, `up`, `right`, `down`
+zoom:				numpad `+`, `-`
+
 ## License <a name="license"></a>
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/semenpindak/FDF/blob/master/LICENSE)
