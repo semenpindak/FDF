@@ -29,13 +29,15 @@ Run `make`, an executable called `fdf` should compile directly. Please submit an
 
 `~ ./fdf samples/42.fdf`
 
-![Sample](screenshots/title.jpg "Map with object")
+### Control key:
 
-Z axis of rotation:	`A`, `D`
-X axis of rotation:	`S`, `W`
-Y axis of rotation:	`Q`, `E`
-move:				`left`, `up`, `right`, `down`
-zoom:				numpad `+`, `-`
+- Rotation around the z axis: `A, D`</p>
+- Rotation around the x axis: `S, W`</p>
+- Rotation around the y axis: `Q, E`</p>
+- move:				        `left, up, right, down`</p>
+- zoom:				         `numpad +, -`</p>
+
+<img src="screenshot/sample42.png" width="600">
 
 ## License <a name="license"></a>
 
