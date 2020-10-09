@@ -17,7 +17,7 @@ This project is about creating a simplified 3D graphic representation of a relie
 
 ## Compiling <a name="Compiling"></a>
 
-Run `git clone --recursive https://github.com/semenpindak/Libft.git`
+Run `git clone --recursive https://github.com/semenpindak/libft.git`
 
 Run `make`, an executable called `fdf` should compile directly. Please submit an issue if you run into any problems.
 
